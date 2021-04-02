@@ -1,0 +1,7 @@
+[wrap-git]
+directory = pixelengine
+url = https://github.com/jpakkane/olcPixelGameEngine.git
+revision = head
+
+[provide]
+pixelengine = pge_dep
