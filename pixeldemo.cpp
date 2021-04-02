@@ -1,12 +1,26 @@
+extern "C" {
+#include<lua.h>
+#include<lauxlib.h>
+#include<lualib.h>
+}
+
+
 #define OLC_PGE_APPLICATION
 #include "olcPixelGameEngine.h"
+
+const char luacode[] = R"(name = "Sample" .. " " .. "application")";
 
 class Example : public olc::PixelGameEngine
 {
 public:
     Example()
     {
-        sAppName = "Example";
+        // No error checking as this is demo code.
+        lua_State *L = luaL_newstate();
+        luaL_dostring(L, luacode);
+        lua_getglobal(L, "name");
+        sAppName = lua_tostring(L, -1);
+        lua_close(L);
     }
 
 public:

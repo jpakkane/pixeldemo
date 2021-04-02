@@ -4,6 +4,7 @@ project('pixeldemo', 'cpp',
                       'buildtype=debugoptimized'])
 
 pge_dep = dependency('pixelengine')
+lua_dep = dependency('lua-5.3')
 
 executable('pixeldemo', 'pixeldemo.cpp',
-    dependencies: pge_dep)
+    dependencies: [pge_dep, lua_dep])

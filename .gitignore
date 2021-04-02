@@ -5,3 +5,5 @@
 .pydevproject
 .vscode
 /subprojects/pixelengine
+/subprojects/packagecache
+/subprojects/lua-5.3.6
